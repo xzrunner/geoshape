@@ -1,0 +1,5 @@
+geoshape/
+projects/*
+
+!projects/geoshape.vcxproj
+!projects/geoshape.vcxproj.filters
