@@ -6,8 +6,6 @@
 namespace gs
 {
 
-IMPLEMENT_CHILD_CLASS_INFO(Shape, Polyline, Polyline)
-
 Polyline::Polyline(const std::vector<sm::vec2>& vertices)
 	: m_impl(vertices, false)
 {

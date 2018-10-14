@@ -21,7 +21,7 @@ public:
 	const sm::rect& GetRect() const { return m_bounding; }
 	void SetRect(const sm::rect& r) { m_bounding = r; }
 
-	DECLARE_CHILD_CLASS_INFO(Shape)
+	RTTR_ENABLE(Shape2D)
 
 }; // Rect
 

@@ -36,7 +36,7 @@ private:
 
 	prim::Bezier m_bezier;
 
-	DECLARE_CHILD_CLASS_INFO(Shape)
+	RTTR_ENABLE(Shape2D)
 
 }; // Bezier
 

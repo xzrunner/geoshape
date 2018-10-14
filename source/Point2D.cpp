@@ -6,8 +6,6 @@
 namespace gs
 {
 
-IMPLEMENT_CHILD_CLASS_INFO(Shape, Point2D, Point2D)
-
 Point2D::Point2D(const sm::vec2& pos)
 	: m_pos(pos)
 {

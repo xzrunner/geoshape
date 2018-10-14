@@ -6,8 +6,6 @@
 namespace gs
 {
 
-IMPLEMENT_CHILD_CLASS_INFO(Shape, Bezier, Bezier)
-
 Bezier::Bezier(const sm::vec2& v0, const sm::vec2& v1,
 		       const sm::vec2& v2, const sm::vec2& v3)
 {

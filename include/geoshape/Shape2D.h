@@ -19,6 +19,8 @@ public:
 protected:
 	sm::rect m_bounding;
 
+	RTTR_ENABLE(Shape)
+
 }; // Shape2D
 
 }

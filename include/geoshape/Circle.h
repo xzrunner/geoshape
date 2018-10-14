@@ -33,7 +33,7 @@ private:
 	sm::vec2 m_center;
 	float    m_radius;
 
-	DECLARE_CHILD_CLASS_INFO(Shape)
+	RTTR_ENABLE(Shape2D)
 
 }; // Circle
 

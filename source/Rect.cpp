@@ -7,8 +7,6 @@
 namespace gs
 {
 
-IMPLEMENT_CHILD_CLASS_INFO(Shape, Rect, Rect)
-
 Rect::Rect(const sm::rect& rect)
 {
 	m_bounding = rect;

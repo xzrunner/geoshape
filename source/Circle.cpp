@@ -6,8 +6,6 @@
 namespace gs
 {
 
-IMPLEMENT_CHILD_CLASS_INFO(Shape, Circle, Circle)
-
 Circle::Circle(const sm::vec2& center, float radius)
 	: m_center(center)
 	, m_radius(radius)
