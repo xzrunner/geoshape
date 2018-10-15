@@ -14,8 +14,7 @@ class Bezier : public Shape2D
 {
 public:
 	Bezier() {}
-	Bezier(const sm::vec2& v0, const sm::vec2& v1,
-		   const sm::vec2& v2, const sm::vec2& v3);
+	Bezier(const std::array<sm::vec2, prim::Bezier::CTRL_NODE_COUNT>& ctrl_nodes);
 
 	virtual std::unique_ptr<Shape> Clone() const override;
 
@@ -26,8 +25,8 @@ public:
 		m_impl.Draw(func, false);
 	}
 
-	void SetCtrlPos(const sm::vec2& v0, const sm::vec2& v1,
-		const sm::vec2& v2, const sm::vec2& v3);
+	void SetCtrlPos(const std::array<sm::vec2, prim::Bezier::CTRL_NODE_COUNT>& ctrl_nodes);
+	auto& GetCtrlPos() const { return m_bezier.GetCtrlNodes(); }
 
 	auto& GetVertices() const { return m_impl.GetVertices(); }
 

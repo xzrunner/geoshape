@@ -3,29 +3,33 @@
 
 #include <SM_Calc.h>
 
+RTTR_REGISTRATION
+{
+	rttr::registration::class_<gs::Bezier>("gs::Bezier")
+		.constructor<>()
+		.constructor<const std::array<sm::vec2, prim::Bezier::CTRL_NODE_COUNT>&>()
+		.property("ctrl_pos", &gs::Bezier::GetCtrlPos, &gs::Bezier::SetCtrlPos)
+	;
+}
+
 namespace gs
 {
 
-Bezier::Bezier(const sm::vec2& v0, const sm::vec2& v1,
-		       const sm::vec2& v2, const sm::vec2& v3)
+Bezier::Bezier(const std::array<sm::vec2, prim::Bezier::CTRL_NODE_COUNT>& ctrl_nodes)
 {
-	SetCtrlPos(v0, v1, v2, v3);
+	SetCtrlPos(ctrl_nodes);
 }
 
 std::unique_ptr<Shape> Bezier::Clone() const
 {
-	sm::vec2 v0, v1, v2, v3;
-	m_bezier.GetCtrlNodes(v0, v1, v2, v3);
-	return std::make_unique<Bezier>(v0, v1, v2, v3);
+	return std::make_unique<Bezier>(m_bezier.GetCtrlNodes());
 }
 
 bool Bezier::IsContain(const sm::vec2& pos) const
 {
-	sm::vec2 vs[4];
-	m_bezier.GetCtrlNodes(vs[0], vs[1], vs[2], vs[3]);
-
 	bool ret = false;
-	for (auto& v : vs) {
+	for (auto& v : m_bezier.GetCtrlNodes())
+	{
 		if (sm::dis_pos_to_pos(pos, v) < NODE_QUERY_RADIUS) {
 			ret = true;
 			break;
@@ -39,10 +43,9 @@ bool Bezier::IsIntersect(const sm::rect& rect) const
 	return m_impl.IsIntersect(rect);
 }
 
-void Bezier::SetCtrlPos(const sm::vec2& v0, const sm::vec2& v1,
-	                    const sm::vec2& v2, const sm::vec2& v3)
+void Bezier::SetCtrlPos(const std::array<sm::vec2, prim::Bezier::CTRL_NODE_COUNT>& ctrl_nodes)
 {
-	m_bezier.SetCtrlPos(v0, v1, v2, v3);
+	m_bezier.SetCtrlNodes(ctrl_nodes);
 	std::vector<sm::vec2> vertices;
 	m_bezier.TransToPolyline(vertices);
 	m_impl.SetVertices(vertices);

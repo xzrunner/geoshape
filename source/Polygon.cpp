@@ -3,6 +3,15 @@
 
 #include <SM_Calc.h>
 
+RTTR_REGISTRATION
+{
+	rttr::registration::class_<gs::Polygon>("gs::Polygon")
+		.constructor<>()
+		.constructor<const std::vector<sm::vec2>&>()
+		.property("vertices", &gs::Polygon::GetVertices, &gs::Polygon::SetVertices)
+	;
+}
+
 namespace gs
 {
 

@@ -3,6 +3,15 @@
 
 #include <SM_Calc.h>
 
+RTTR_REGISTRATION
+{
+	rttr::registration::class_<gs::Point2D>("gs::Point2D")
+		.constructor<>()
+		.constructor<const sm::vec2&>()
+		.property("pos", &gs::Point2D::GetPos, &gs::Point2D::SetPos)
+	;
+}
+
 namespace gs
 {
 

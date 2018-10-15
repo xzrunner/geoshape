@@ -1,5 +1,8 @@
 geoshape/
+gs_test/
 projects/*
 
 !projects/geoshape.vcxproj
 !projects/geoshape.vcxproj.filters
+!projects/gs_test.vcxproj
+!projects/gs_test.vcxproj.filters

@@ -3,6 +3,15 @@
 
 #include <SM_Calc.h>
 
+RTTR_REGISTRATION
+{
+	rttr::registration::class_<gs::Polyline>("gs::Polyline")
+		.constructor<>()
+		.constructor<const std::vector<sm::vec2>&>()
+		.property("vertices", &gs::Polyline::GetVertices, &gs::Polyline::SetVertices)
+	;
+}
+
 namespace gs
 {
 

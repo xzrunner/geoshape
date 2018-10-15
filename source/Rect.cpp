@@ -4,6 +4,15 @@
 #include <SM_Calc.h>
 #include <primitive/Path.h>
 
+RTTR_REGISTRATION
+{
+	rttr::registration::class_<gs::Rect>("gs::Rect")
+		.constructor<>()
+		.constructor<const sm::rect&>()
+		.property("rect", &gs::Rect::GetRect, &gs::Rect::SetRect)
+	;
+}
+
 namespace gs
 {
 
