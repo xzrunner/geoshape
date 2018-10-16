@@ -5,7 +5,7 @@
 
 RTTR_REGISTRATION
 {
-	rttr::registration::class_<gs::Point2D>("gs::Point2D")
+	rttr::registration::class_<gs::Point2D>("gs_point2d")
 		.constructor<>()
 		.constructor<const sm::vec2&>()
 		.property("pos", &gs::Point2D::GetPos, &gs::Point2D::SetPos)

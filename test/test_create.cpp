@@ -66,7 +66,7 @@ TEST_CASE("heap_rttr")
 {
 	SECTION("point2d")
 	{
-		auto type = rttr::type::get_by_name("gs::Point2D");
+		auto type = rttr::type::get_by_name("gs_point2d");
 		REQUIRE(type.is_valid());
 		auto obj = type.create({ sm::vec2(1, 2) });
 		REQUIRE(obj.is_valid());
@@ -77,7 +77,7 @@ TEST_CASE("heap_rttr")
 
 	SECTION("rect")
 	{
-		auto type = rttr::type::get_by_name("gs::Rect");
+		auto type = rttr::type::get_by_name("gs_rect");
 		REQUIRE(type.is_valid());
 		auto obj = type.create({ sm::rect(100, 200) });
 		REQUIRE(obj.is_valid());
@@ -88,7 +88,7 @@ TEST_CASE("heap_rttr")
 
 	SECTION("circle")
 	{
-		auto type = rttr::type::get_by_name("gs::Circle");
+		auto type = rttr::type::get_by_name("gs_circle");
 		auto ctor = type.get_constructor({ rttr::type::get<sm::vec2>(), rttr::type::get<float>() });
 		auto obj = ctor.invoke(sm::vec2(1, 2), 3.0f);
 		REQUIRE(obj.is_valid());
@@ -100,7 +100,7 @@ TEST_CASE("heap_rttr")
 
 	SECTION("bezier")
 	{
-		auto type = rttr::type::get_by_name("gs::Bezier");
+		auto type = rttr::type::get_by_name("gs_bezier");
 		REQUIRE(type.is_valid());
 
 		std::array<sm::vec2, prim::Bezier::CTRL_NODE_COUNT> ctrl_nodes = {
@@ -119,7 +119,7 @@ TEST_CASE("heap_rttr")
 
 	SECTION("polyline")
 	{
-		auto type = rttr::type::get_by_name("gs::Polyline");
+		auto type = rttr::type::get_by_name("gs_polyline");
 		REQUIRE(type.is_valid());
 		std::vector<sm::vec2> points = { sm::vec2(1, 2), sm::vec2(3, 4), sm::vec2(5, 6), sm::vec2(7, 8) };
 		auto obj = type.create({ points });
@@ -135,7 +135,7 @@ TEST_CASE("heap_rttr")
 
 	SECTION("polygon")
 	{
-		auto type = rttr::type::get_by_name("gs::Polygon");
+		auto type = rttr::type::get_by_name("gs_polygon");
 		REQUIRE(type.is_valid());
 		std::vector<sm::vec2> points = { sm::vec2(1, 2), sm::vec2(3, 4), sm::vec2(5, 6), sm::vec2(7, 8) };
 		auto obj = type.create({ points });

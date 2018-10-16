@@ -5,7 +5,7 @@
 
 RTTR_REGISTRATION
 {
-	rttr::registration::class_<gs::Polyline>("gs::Polyline")
+	rttr::registration::class_<gs::Polyline>("gs_polyline")
 		.constructor<>()
 		.constructor<const std::vector<sm::vec2>&>()
 		.property("vertices", &gs::Polyline::GetVertices, &gs::Polyline::SetVertices)

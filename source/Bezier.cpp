@@ -5,7 +5,7 @@
 
 RTTR_REGISTRATION
 {
-	rttr::registration::class_<gs::Bezier>("gs::Bezier")
+	rttr::registration::class_<gs::Bezier>("gs_bezier")
 		.constructor<>()
 		.constructor<const std::array<sm::vec2, prim::Bezier::CTRL_NODE_COUNT>&>()
 		.property("ctrl_pos", &gs::Bezier::GetCtrlPos, &gs::Bezier::SetCtrlPos)
