@@ -176,7 +176,7 @@ TEST_CASE("json")
 		auto json = js::RTTR::ToRapidJson(shape);
 //		printf("%s\n", json.c_str());
 		Point2D p;
-		js::RTTR::FromRapidJson(json, p);
+		js::RTTR::FromRapidJson(json, "", p);
 
 		REQUIRE(p.GetPos().x == 1);
 		REQUIRE(p.GetPos().y == 2);
@@ -189,7 +189,7 @@ TEST_CASE("json")
 		auto json = js::RTTR::ToRapidJson(shape);
 //		printf("%s\n", json.c_str());
 		Rect r;
-		js::RTTR::FromRapidJson(json, r);
+		js::RTTR::FromRapidJson(json, "", r);
 
 		REQUIRE(r.GetRect() == sm::rect(100, 200));
 	}
@@ -201,7 +201,7 @@ TEST_CASE("json")
 		auto json = js::RTTR::ToRapidJson(shape);
 //		printf("%s\n", json.c_str());
 		Circle c;
-		js::RTTR::FromRapidJson(json, c);
+		js::RTTR::FromRapidJson(json, "", c);
 
 		REQUIRE(c.GetCenter() == sm::vec2(1, 2));
 		REQUIRE(c.GetRadius() == 3);
@@ -217,7 +217,7 @@ TEST_CASE("json")
 		auto json = js::RTTR::ToRapidJson(shape);
 //		printf("%s\n", json.c_str());
 		Bezier bz;
-		js::RTTR::FromRapidJson(json, bz);
+		js::RTTR::FromRapidJson(json, "", bz);
 
 		auto& cp = bz.GetCtrlPos();
 		REQUIRE(cp[0] == sm::vec2(1, 2));
@@ -236,7 +236,7 @@ TEST_CASE("json")
 		auto json = js::RTTR::ToRapidJson(shape);
 //		printf("%s\n", json.c_str());
 		Polyline pline;
-		js::RTTR::FromRapidJson(json, pline);
+		js::RTTR::FromRapidJson(json, "", pline);
 
 		auto& vs = pline.GetVertices();
 		REQUIRE(vs[0] == sm::vec2(1, 2));
@@ -255,7 +255,7 @@ TEST_CASE("json")
 		auto json = js::RTTR::ToRapidJson(shape);
 //		printf("%s\n", json.c_str());
 		Polygon pline;
-		js::RTTR::FromRapidJson(json, pline);
+		js::RTTR::FromRapidJson(json, "", pline);
 
 		auto& vs = pline.GetVertices();
 		REQUIRE(vs[0] == sm::vec2(1, 2));
