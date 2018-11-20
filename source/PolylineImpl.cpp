@@ -88,12 +88,74 @@ void PolylineImpl::SetVertices(const std::vector<sm::vec2>& vertices)
 	UpdateBounding();
 }
 
+bool PolylineImpl::AddVertex(int index, const sm::vec2& pos)
+{
+	if (index == m_vertices.size()) {
+		m_vertices.push_back(pos);
+		m_bounding.Combine(pos);
+		return true;
+	} else if (index >= 0 && index < m_vertices.size()) {
+		m_vertices.insert(m_vertices.begin() + index, pos);
+		m_bounding.Combine(pos);
+		return true;
+	} else {
+		return false;
+	}
+}
+
+bool PolylineImpl::RemoveVertex(const sm::vec2& pos)
+{
+	auto itr = m_vertices.begin();
+	for ( ; itr != m_vertices.end(); ++itr)
+	{
+		if (*itr != pos) {
+			continue;
+		}
+		m_vertices.erase(itr);
+		if (IsPosOnBounding(pos)) {
+			UpdateBounding();
+		}
+		return true;
+	}
+	return false;
+}
+
+bool PolylineImpl::ChangeVertex(const sm::vec2& from, const sm::vec2& to)
+{
+	int index = 0;
+	for (int n = m_vertices.size(); index < n; ++index) {
+		if (m_vertices[index] == from) {
+			break;
+		}
+	}
+
+	if (index == m_vertices.size()) {
+		return false;
+	}
+
+	m_vertices[index] = to;
+
+	if (IsPosOnBounding(from)) {
+		UpdateBounding();
+	} else {
+		m_bounding.Combine(to);
+	}
+
+	return true;
+}
+
 void PolylineImpl::UpdateBounding()
 {
 	m_bounding.MakeEmpty();
 	for (auto& v : m_vertices) {
 		m_bounding.Combine(v);
 	}
+}
+
+bool PolylineImpl::IsPosOnBounding(const sm::vec2& pos) const
+{
+	return (pos.x == m_bounding.xmin || pos.x == m_bounding.xmax ||
+		    pos.y == m_bounding.ymin || pos.y == m_bounding.ymax);
 }
 
 }
