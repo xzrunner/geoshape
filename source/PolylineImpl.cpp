@@ -82,11 +82,6 @@ bool PolylineImpl::IsIntersect(const sm::rect& rect) const
 	return false;
 }
 
-void PolylineImpl::Draw(render func, bool filling) const
-{
-	func(m_vertices.data(), m_vertices.size(), m_is_closed, filling);
-}
-
 void PolylineImpl::SetVertices(const std::vector<sm::vec2>& vertices)
 {
 	m_vertices = vertices;

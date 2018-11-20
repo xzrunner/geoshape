@@ -19,9 +19,6 @@ public:
 	bool IsContain(const sm::vec2& pos) const;
 	bool IsIntersect(const sm::rect& rect) const;
 
-	using render = std::function<void(const sm::vec2* vertices, size_t n, bool close, bool filling)>;
-	void Draw(render func, bool filling) const;
-
 	auto& GetVertices() const { return m_vertices; }
 	void SetVertices(const std::vector<sm::vec2>& vertices);
 

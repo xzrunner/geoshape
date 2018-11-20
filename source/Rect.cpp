@@ -36,14 +36,4 @@ bool Rect::IsIntersect(const sm::rect& rect) const
 	return sm::is_rect_intersect_rect(rect, m_bounding);
 }
 
-void Rect::Draw(render func) const
-{
-	prim::Path p;
-	p.Rect({ m_bounding.xmin, m_bounding.ymin },
-		m_bounding.Width(), m_bounding.Height() );
-	auto& vertices = p.GetCurrPath();
-	func(vertices.data(), vertices.size(), false, false);
-//	func(vertices.data(), vertices.size() - 1, true, false);
-}
-
 }

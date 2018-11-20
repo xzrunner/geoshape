@@ -16,10 +16,6 @@ public:
 	virtual bool IsContain(const sm::vec2& pos) const override;
 	virtual bool IsIntersect(const sm::rect& rect) const override;
 
-	virtual void Draw(render func) const override {
-		func(&m_pos, 1, false, false);
-	}
-
 	auto& GetPos() const { return m_pos; }
 	void SetPos(const sm::vec2& pos);
 
