@@ -33,7 +33,7 @@ bool Polygon::IsContain(const sm::vec2& pos) const
 
 bool Polygon::IsIntersect(const sm::rect& rect) const
 {
-	return sm::is_rect_intersect_polygon(rect, m_impl.GetVertices());
+	return m_impl.IsIntersect(rect);
 }
 
 void Polygon::SetVertices(const std::vector<sm::vec2>& vertices)
