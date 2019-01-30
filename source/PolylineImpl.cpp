@@ -94,7 +94,7 @@ bool PolylineImpl::AddVertex(int index, const sm::vec2& pos)
 		m_vertices.push_back(pos);
 		m_bounding.Combine(pos);
 		return true;
-	} else if (index >= 0 && index < m_vertices.size()) {
+	} else if (index >= 0 && index < static_cast<int>(m_vertices.size())) {
 		m_vertices.insert(m_vertices.begin() + index, pos);
 		m_bounding.Combine(pos);
 		return true;
