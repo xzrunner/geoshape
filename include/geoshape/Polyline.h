@@ -22,6 +22,9 @@ public:
 	auto& GetVertices() const { return m_impl.GetVertices(); }
 	void SetVertices(const std::vector<sm::vec2>& vertices);
 
+    void SetClosed(bool is_closed) { m_impl.SetClosed(is_closed); }
+    bool GetClosed() const { return m_impl.GetClosed(); }
+
 private:
 	PolylineImpl m_impl;
 

@@ -29,6 +29,9 @@ public:
 
 	auto& GetBounding() const { return m_bounding; }
 
+    void SetClosed(bool is_closed) { m_is_closed = is_closed; }
+    bool GetClosed() const { return m_is_closed; }
+
 private:
 	void UpdateBounding();
 
