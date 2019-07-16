@@ -27,7 +27,7 @@ private:
 
 private:
 	sm::vec2 m_center;
-	float    m_radius;
+	float    m_radius = 1;
 
 	RTTR_ENABLE(Shape2D)
 
