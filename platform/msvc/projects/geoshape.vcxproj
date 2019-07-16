@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\include\geoshape\Bezier.h" />
+    <ClInclude Include="..\..\..\include\geoshape\Box.h" />
     <ClInclude Include="..\..\..\include\geoshape\Circle.h" />
     <ClInclude Include="..\..\..\include\geoshape\config.h" />
     <ClInclude Include="..\..\..\include\geoshape\Point2D.h" />
@@ -23,9 +24,11 @@
     <ClInclude Include="..\..\..\include\geoshape\Shape.h" />
     <ClInclude Include="..\..\..\include\geoshape\Shape2D.h" />
     <ClInclude Include="..\..\..\include\geoshape\Shape3D.h" />
+    <ClInclude Include="..\..\..\include\geoshape\Sphere.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\source\Bezier.cpp" />
+    <ClCompile Include="..\..\..\source\Box.cpp" />
     <ClCompile Include="..\..\..\source\Circle.cpp" />
     <ClCompile Include="..\..\..\source\Point2D.cpp" />
     <ClCompile Include="..\..\..\source\Polygon.cpp" />
@@ -33,6 +36,7 @@
     <ClCompile Include="..\..\..\source\PolylineImpl.cpp" />
     <ClCompile Include="..\..\..\source\Rect.cpp" />
     <ClCompile Include="..\..\..\source\Serialize.cpp" />
+    <ClCompile Include="..\..\..\source\Sphere.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectName>1.geoshape</ProjectName>

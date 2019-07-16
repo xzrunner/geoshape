@@ -23,6 +23,12 @@
       <Filter>2d</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\source\Serialize.cpp" />
+    <ClCompile Include="..\..\..\source\Box.cpp">
+      <Filter>3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\Sphere.cpp">
+      <Filter>3d</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\include\geoshape\Shape.h" />
@@ -51,6 +57,12 @@
       <Filter>2d</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\geoshape\Serialize.h" />
+    <ClInclude Include="..\..\..\include\geoshape\Box.h">
+      <Filter>3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\geoshape\Sphere.h">
+      <Filter>3d</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="2d">
