@@ -20,7 +20,7 @@ Bezier::Bezier(const std::array<sm::vec2, prim::Bezier::CTRL_NODE_COUNT>& ctrl_n
 	SetCtrlPos(ctrl_nodes);
 }
 
-std::unique_ptr<Shape> Bezier::Clone() const
+std::unique_ptr<Shape2D> Bezier::Clone() const
 {
 	return std::make_unique<Bezier>(m_bezier.GetCtrlNodes());
 }

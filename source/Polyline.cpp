@@ -21,7 +21,7 @@ Polyline::Polyline(const std::vector<sm::vec2>& vertices)
 	m_bounding = m_impl.GetBounding();
 }
 
-std::unique_ptr<Shape> Polyline::Clone() const
+std::unique_ptr<Shape2D> Polyline::Clone() const
 {
 	return std::make_unique<Polyline>(m_impl.GetVertices());
 }

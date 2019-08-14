@@ -23,7 +23,7 @@ Circle::Circle(const sm::vec2& center, float radius)
 	UpdateBounding();
 }
 
-std::unique_ptr<Shape> Circle::Clone() const
+std::unique_ptr<Shape2D> Circle::Clone() const
 {
 	return std::make_unique<Circle>(m_center, m_radius);
 }

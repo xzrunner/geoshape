@@ -17,7 +17,7 @@ Sphere::Sphere(const sm::vec3& center, float radius)
     m_bounding = sm::cube(center, l, l, l);
 }
 
-std::unique_ptr<Shape> Sphere::Clone() const
+std::unique_ptr<Shape3D> Sphere::Clone() const
 {
     return std::make_unique<Sphere>(m_center, m_radius);
 }

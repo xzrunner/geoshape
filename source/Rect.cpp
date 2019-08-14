@@ -21,7 +21,7 @@ Rect::Rect(const sm::rect& rect)
 	m_bounding = rect;
 }
 
-std::unique_ptr<Shape> Rect::Clone() const
+std::unique_ptr<Shape2D> Rect::Clone() const
 {
 	return std::make_unique<Rect>(m_bounding);
 }

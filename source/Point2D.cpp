@@ -21,7 +21,7 @@ Point2D::Point2D(const sm::vec2& pos)
 	UpdateBounding();
 }
 
-std::unique_ptr<Shape> Point2D::Clone() const
+std::unique_ptr<Shape2D> Point2D::Clone() const
 {
 	return std::make_unique<Point2D>(m_pos);
 }

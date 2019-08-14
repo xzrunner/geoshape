@@ -13,7 +13,7 @@ public:
     Sphere();
     Sphere(const sm::vec3& center, float radius);
 
-    virtual std::unique_ptr<Shape> Clone() const override;
+    virtual std::unique_ptr<Shape3D> Clone() const override;
 
     auto& GetCenter() const { return m_center; }
     float GetRadius() const { return m_radius; }

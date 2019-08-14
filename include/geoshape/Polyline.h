@@ -14,7 +14,7 @@ public:
 	Polyline() {}
 	Polyline(const std::vector<sm::vec2>& vertices);
 
-	virtual std::unique_ptr<Shape> Clone() const override;
+	virtual std::unique_ptr<Shape2D> Clone() const override;
 
 	virtual bool IsContain(const sm::vec2& pos) const override;
 	virtual bool IsIntersect(const sm::rect& rect) const override;

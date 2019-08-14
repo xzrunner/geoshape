@@ -11,7 +11,7 @@ public:
 	Rect() {}
 	Rect(const sm::rect& rect);
 
-	virtual std::unique_ptr<Shape> Clone() const override;
+	virtual std::unique_ptr<Shape2D> Clone() const override;
 
 	virtual bool IsContain(const sm::vec2& pos) const override;
 	virtual bool IsIntersect(const sm::rect& rect) const override;
