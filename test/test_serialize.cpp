@@ -4,8 +4,8 @@
 #include <geoshape/Rect.h>
 #include <geoshape/Circle.h>
 #include <geoshape/Bezier.h>
-#include <geoshape/Polyline.h>
-#include <geoshape/Polygon.h>
+#include <geoshape/Polyline2D.h>
+#include <geoshape/Polygon2D.h>
 #include <geoshape/Serialize.h>
 
 #include <js/RTTR.h>

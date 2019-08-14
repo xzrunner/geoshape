@@ -1,18 +1,18 @@
 #pragma once
 
 #include "geoshape/Shape2D.h"
-#include "geoshape/PolylineImpl.h"
+#include "geoshape/Polyline2DImpl.h"
 
 #include <vector>
 
 namespace gs
 {
 
-class Polyline : public Shape2D
+class Polygon2D : public Shape2D
 {
 public:
-	Polyline() {}
-	Polyline(const std::vector<sm::vec2>& vertices);
+	Polygon2D() {}
+	Polygon2D(const std::vector<sm::vec2>& vertices);
 
 	virtual std::unique_ptr<Shape2D> Clone() const override;
 
@@ -22,14 +22,11 @@ public:
 	auto& GetVertices() const { return m_impl.GetVertices(); }
 	void SetVertices(const std::vector<sm::vec2>& vertices);
 
-    void SetClosed(bool is_closed) { m_impl.SetClosed(is_closed); }
-    bool GetClosed() const { return m_impl.GetClosed(); }
-
 private:
-	PolylineImpl m_impl;
+	Polyline2DImpl m_impl;
 
 	RTTR_ENABLE(Shape2D)
 
-}; // Polyline
+}; // Polygon2D
 
 }

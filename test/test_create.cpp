@@ -4,8 +4,8 @@
 #include <geoshape/Rect.h>
 #include <geoshape/Circle.h>
 #include <geoshape/Bezier.h>
-#include <geoshape/Polyline.h>
-#include <geoshape/Polygon.h>
+#include <geoshape/Polyline2D.h>
+#include <geoshape/Polygon2D.h>
 
 namespace gs
 {
@@ -124,8 +124,8 @@ TEST_CASE("heap_rttr")
 		std::vector<sm::vec2> points = { sm::vec2(1, 2), sm::vec2(3, 4), sm::vec2(5, 6), sm::vec2(7, 8) };
 		auto obj = type.create({ points });
 		REQUIRE(obj.is_valid());
-		REQUIRE(obj.is_type<std::shared_ptr<gs::Polyline>>());
-		auto pline = obj.get_value<std::shared_ptr<gs::Polyline>>();
+		REQUIRE(obj.is_type<std::shared_ptr<gs::Polyline2D>>());
+		auto pline = obj.get_value<std::shared_ptr<gs::Polyline2D>>();
 		auto vs = pline->GetVertices();
 		REQUIRE(vs[0] == sm::vec2(1, 2));
 		REQUIRE(vs[1] == sm::vec2(3, 4));
@@ -140,8 +140,8 @@ TEST_CASE("heap_rttr")
 		std::vector<sm::vec2> points = { sm::vec2(1, 2), sm::vec2(3, 4), sm::vec2(5, 6), sm::vec2(7, 8) };
 		auto obj = type.create({ points });
 		REQUIRE(obj.is_valid());
-		REQUIRE(obj.is_type<std::shared_ptr<gs::Polygon>>());
-		auto pline = obj.get_value<std::shared_ptr<gs::Polygon>>();
+		REQUIRE(obj.is_type<std::shared_ptr<gs::Polygon2D>>());
+		auto pline = obj.get_value<std::shared_ptr<gs::Polygon2D>>();
 		auto vs = pline->GetVertices();
 		REQUIRE(vs[0] == sm::vec2(1, 2));
 		REQUIRE(vs[1] == sm::vec2(3, 4));

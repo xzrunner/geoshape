@@ -17,10 +17,10 @@
     <ClInclude Include="..\..\..\include\geoshape\config.h" />
     <ClInclude Include="..\..\..\include\geoshape\Point2D.h" />
     <ClInclude Include="..\..\..\include\geoshape\Point3D.h" />
-    <ClInclude Include="..\..\..\include\geoshape\Polygon.h" />
-    <ClInclude Include="..\..\..\include\geoshape\Polyline.h" />
+    <ClInclude Include="..\..\..\include\geoshape\Polygon2D.h" />
+    <ClInclude Include="..\..\..\include\geoshape\Polyline2D.h" />
     <ClInclude Include="..\..\..\include\geoshape\Polyline3D.h" />
-    <ClInclude Include="..\..\..\include\geoshape\PolylineImpl.h" />
+    <ClInclude Include="..\..\..\include\geoshape\Polyline2DImpl.h" />
     <ClInclude Include="..\..\..\include\geoshape\Rect.h" />
     <ClInclude Include="..\..\..\include\geoshape\Serialize.h" />
     <ClInclude Include="..\..\..\include\geoshape\Shape2D.h" />
@@ -33,10 +33,10 @@
     <ClCompile Include="..\..\..\source\Circle.cpp" />
     <ClCompile Include="..\..\..\source\Point2D.cpp" />
     <ClCompile Include="..\..\..\source\Point3D.cpp" />
-    <ClCompile Include="..\..\..\source\Polygon.cpp" />
-    <ClCompile Include="..\..\..\source\Polyline.cpp" />
+    <ClCompile Include="..\..\..\source\Polygon2D.cpp" />
+    <ClCompile Include="..\..\..\source\Polyline2D.cpp" />
     <ClCompile Include="..\..\..\source\Polyline3D.cpp" />
-    <ClCompile Include="..\..\..\source\PolylineImpl.cpp" />
+    <ClCompile Include="..\..\..\source\Polyline2DImpl.cpp" />
     <ClCompile Include="..\..\..\source\Rect.cpp" />
     <ClCompile Include="..\..\..\source\Serialize.cpp" />
     <ClCompile Include="..\..\..\source\Sphere.cpp" />

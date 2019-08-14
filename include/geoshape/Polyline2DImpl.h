@@ -9,11 +9,11 @@
 namespace gs
 {
 
-class PolylineImpl
+class Polyline2DImpl
 {
 public:
-	PolylineImpl() {}
-	PolylineImpl(const std::vector<sm::vec2>& vertices,
+	Polyline2DImpl() {}
+	Polyline2DImpl(const std::vector<sm::vec2>& vertices,
 		bool is_closed = false);
 
 	bool IsContain(const sm::vec2& pos) const;
@@ -43,6 +43,6 @@ private:
 
 	sm::rect m_bounding;
 
-}; // PolylineImpl
+}; // Polyline2DImpl
 
 }

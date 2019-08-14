@@ -1,4 +1,4 @@
-#include "geoshape/PolylineImpl.h"
+#include "geoshape/Polyline2DImpl.h"
 #include "geoshape/config.h"
 
 #include <SM_Calc.h>
@@ -6,7 +6,7 @@
 namespace gs
 {
 
-PolylineImpl::PolylineImpl(const std::vector<sm::vec2>& vertices,
+Polyline2DImpl::Polyline2DImpl(const std::vector<sm::vec2>& vertices,
 	                       bool is_closed)
 	: m_vertices(vertices)
 	, m_is_closed(is_closed)
@@ -14,7 +14,7 @@ PolylineImpl::PolylineImpl(const std::vector<sm::vec2>& vertices,
 	UpdateBounding();
 }
 
-bool PolylineImpl::IsContain(const sm::vec2& pos) const
+bool Polyline2DImpl::IsContain(const sm::vec2& pos) const
 {
 	if (m_vertices.empty()) {
 		return false;
@@ -55,7 +55,7 @@ bool PolylineImpl::IsContain(const sm::vec2& pos) const
 	}
 }
 
-bool PolylineImpl::IsIntersect(const sm::rect& rect) const
+bool Polyline2DImpl::IsIntersect(const sm::rect& rect) const
 {
 	if (m_vertices.empty() || !sm::is_rect_intersect_rect(rect, m_bounding)) {
 		return false;
@@ -82,13 +82,13 @@ bool PolylineImpl::IsIntersect(const sm::rect& rect) const
 	return false;
 }
 
-void PolylineImpl::SetVertices(const std::vector<sm::vec2>& vertices)
+void Polyline2DImpl::SetVertices(const std::vector<sm::vec2>& vertices)
 {
 	m_vertices = vertices;
 	UpdateBounding();
 }
 
-bool PolylineImpl::AddVertex(int index, const sm::vec2& pos)
+bool Polyline2DImpl::AddVertex(int index, const sm::vec2& pos)
 {
 	if (index == m_vertices.size()) {
 		m_vertices.push_back(pos);
@@ -103,7 +103,7 @@ bool PolylineImpl::AddVertex(int index, const sm::vec2& pos)
 	}
 }
 
-bool PolylineImpl::RemoveVertex(const sm::vec2& pos)
+bool Polyline2DImpl::RemoveVertex(const sm::vec2& pos)
 {
 	auto itr = m_vertices.begin();
 	for ( ; itr != m_vertices.end(); ++itr)
@@ -120,7 +120,7 @@ bool PolylineImpl::RemoveVertex(const sm::vec2& pos)
 	return false;
 }
 
-bool PolylineImpl::ChangeVertex(const sm::vec2& from, const sm::vec2& to)
+bool Polyline2DImpl::ChangeVertex(const sm::vec2& from, const sm::vec2& to)
 {
 	int index = 0;
 	for (int n = m_vertices.size(); index < n; ++index) {
@@ -144,7 +144,7 @@ bool PolylineImpl::ChangeVertex(const sm::vec2& from, const sm::vec2& to)
 	return true;
 }
 
-void PolylineImpl::UpdateBounding()
+void Polyline2DImpl::UpdateBounding()
 {
 	m_bounding.MakeEmpty();
 	for (auto& v : m_vertices) {
@@ -152,7 +152,7 @@ void PolylineImpl::UpdateBounding()
 	}
 }
 
-bool PolylineImpl::IsPosOnBounding(const sm::vec2& pos) const
+bool Polyline2DImpl::IsPosOnBounding(const sm::vec2& pos) const
 {
 	return (pos.x == m_bounding.xmin || pos.x == m_bounding.xmax ||
 		    pos.y == m_bounding.ymin || pos.y == m_bounding.ymax);

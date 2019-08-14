@@ -10,16 +10,7 @@
     <ClCompile Include="..\..\..\source\Circle.cpp">
       <Filter>2d</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\source\Polyline.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\source\Polygon.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\source\Bezier.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\source\PolylineImpl.cpp">
       <Filter>2d</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\source\Serialize.cpp" />
@@ -35,6 +26,15 @@
     <ClCompile Include="..\..\..\source\Polyline3D.cpp">
       <Filter>3d</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\source\Polyline2DImpl.cpp">
+      <Filter>2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\Polyline2D.cpp">
+      <Filter>2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\Polygon2D.cpp">
+      <Filter>2d</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\include\geoshape\Shape2D.h" />
@@ -47,15 +47,6 @@
       <Filter>2d</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\geoshape\Circle.h">
-      <Filter>2d</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\geoshape\Polyline.h">
-      <Filter>2d</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\geoshape\Polygon.h">
-      <Filter>2d</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\geoshape\PolylineImpl.h">
       <Filter>2d</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\geoshape\Bezier.h">
@@ -73,6 +64,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\include\geoshape\Polyline3D.h">
       <Filter>3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\geoshape\Polyline2DImpl.h">
+      <Filter>2d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\geoshape\Polyline2D.h">
+      <Filter>2d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\geoshape\Polygon2D.h">
+      <Filter>2d</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

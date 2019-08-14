@@ -1,7 +1,7 @@
 #pragma once
 
 #include "geoshape/Shape2D.h"
-#include "geoshape/PolylineImpl.h"
+#include "geoshape/Polyline2DImpl.h"
 
 #include <primitive/Bezier.h>
 
@@ -27,7 +27,7 @@ public:
 	auto& GetVertices() const { return m_impl.GetVertices(); }
 
 private:
-	PolylineImpl m_impl;
+	Polyline2DImpl m_impl;
 
 	prim::Bezier m_bezier;
 
