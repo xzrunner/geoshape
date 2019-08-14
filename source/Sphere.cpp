@@ -5,21 +5,25 @@ namespace gs
 
 Sphere::Sphere()
 {
-    const float l = m_radius * 2;
-    m_bounding = sm::cube(m_center, l, l, l);
+    BuildBounding();
 }
 
 Sphere::Sphere(const sm::vec3& center, float radius)
     : m_center(center)
     , m_radius(radius)
 {
-    const float l = radius * 2;
-    m_bounding = sm::cube(center, l, l, l);
+    BuildBounding();
 }
 
 std::unique_ptr<Shape3D> Sphere::Clone() const
 {
     return std::make_unique<Sphere>(m_center, m_radius);
+}
+
+void Sphere::BuildBounding()
+{
+    const float r = m_radius * 2;
+    m_bounding = sm::cube(m_center, r, r, r);
 }
 
 }

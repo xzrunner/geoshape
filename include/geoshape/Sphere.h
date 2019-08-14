@@ -19,6 +19,9 @@ public:
     float GetRadius() const { return m_radius; }
 
 private:
+    void BuildBounding();
+
+private:
     sm::vec3 m_center;
     float    m_radius = 1;
 

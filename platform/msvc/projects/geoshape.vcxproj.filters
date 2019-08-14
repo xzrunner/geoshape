@@ -29,9 +29,14 @@
     <ClCompile Include="..\..\..\source\Sphere.cpp">
       <Filter>3d</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\source\Point3D.cpp">
+      <Filter>3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\Polyline3D.cpp">
+      <Filter>3d</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\include\geoshape\Shape.h" />
     <ClInclude Include="..\..\..\include\geoshape\Shape2D.h" />
     <ClInclude Include="..\..\..\include\geoshape\Shape3D.h" />
     <ClInclude Include="..\..\..\include\geoshape\Point2D.h">
@@ -61,6 +66,12 @@
       <Filter>3d</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\geoshape\Sphere.h">
+      <Filter>3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\geoshape\Point3D.h">
+      <Filter>3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\geoshape\Polyline3D.h">
       <Filter>3d</Filter>
     </ClInclude>
   </ItemGroup>

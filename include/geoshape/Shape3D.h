@@ -17,6 +17,8 @@ public:
 
 //    virtual bool IsContain(const sm::vec3& pos) const = 0;
 
+    auto& GetBounding() const { return m_bounding; }
+
 protected:
     sm::cube m_bounding;
 
