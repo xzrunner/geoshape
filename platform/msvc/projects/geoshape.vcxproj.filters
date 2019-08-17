@@ -35,6 +35,9 @@
     <ClCompile Include="..\..\..\source\Polygon2D.cpp">
       <Filter>2d</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\source\PointSet3D.cpp">
+      <Filter>3d</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\include\geoshape\Shape2D.h" />
@@ -73,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\include\geoshape\Polygon2D.h">
       <Filter>2d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\geoshape\PointSet3D.h">
+      <Filter>3d</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
