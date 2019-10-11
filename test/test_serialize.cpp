@@ -110,7 +110,7 @@ TEST_CASE("rttr")
 
 	SECTION("polyline")
 	{
-		Polyline p({ sm::vec2(1, 2), sm::vec2(3, 4), sm::vec2(5, 6), sm::vec2(7, 8) });
+		Polyline2D p({ sm::vec2(1, 2), sm::vec2(3, 4), sm::vec2(5, 6), sm::vec2(7, 8) });
 
 		auto prop = rttr::type::get(p).get_property("vertices");
 
@@ -138,7 +138,7 @@ TEST_CASE("rttr")
 
 	SECTION("polygon")
 	{
-		Polygon p({ sm::vec2(1, 2), sm::vec2(3, 4), sm::vec2(5, 6), sm::vec2(7, 8) });
+		Polygon2D p({ sm::vec2(1, 2), sm::vec2(3, 4), sm::vec2(5, 6), sm::vec2(7, 8) });
 
 		auto prop = rttr::type::get(p).get_property("vertices");
 
@@ -171,7 +171,7 @@ TEST_CASE("json")
 
 	SECTION("point2d")
 	{
-		std::shared_ptr<Shape> shape = std::make_shared<Point2D>(sm::vec2(1, 2));
+		std::shared_ptr<Shape2D> shape = std::make_shared<Point2D>(sm::vec2(1, 2));
 
 		auto json = js::RTTR::ToRapidJson(shape);
 //		printf("%s\n", json.c_str());
@@ -184,7 +184,7 @@ TEST_CASE("json")
 
 	SECTION("rect")
 	{
-		std::shared_ptr<Shape> shape = std::make_shared<Rect>(sm::rect(100, 200));
+		std::shared_ptr<Shape2D> shape = std::make_shared<Rect>(sm::rect(100, 200));
 
 		auto json = js::RTTR::ToRapidJson(shape);
 //		printf("%s\n", json.c_str());
@@ -196,7 +196,7 @@ TEST_CASE("json")
 
 	SECTION("circle")
 	{
-		std::shared_ptr<Shape> shape = std::make_shared<Circle>(sm::vec2(1, 2), 3);
+		std::shared_ptr<Shape2D> shape = std::make_shared<Circle>(sm::vec2(1, 2), 3);
 
 		auto json = js::RTTR::ToRapidJson(shape);
 //		printf("%s\n", json.c_str());
@@ -212,7 +212,7 @@ TEST_CASE("json")
 		std::array<sm::vec2, prim::Bezier::CTRL_NODE_COUNT> cnodes = {
 			sm::vec2(1, 2), sm::vec2(3, 4), sm::vec2(5, 6), sm::vec2(7, 8)
 		};
-		std::shared_ptr<Shape> shape = std::make_shared<Bezier>(cnodes);
+		std::shared_ptr<Shape2D> shape = std::make_shared<Bezier>(cnodes);
 
 		auto json = js::RTTR::ToRapidJson(shape);
 //		printf("%s\n", json.c_str());
@@ -231,11 +231,11 @@ TEST_CASE("json")
 		std::vector<sm::vec2> cnodes = {
 			sm::vec2(1, 2), sm::vec2(3, 4), sm::vec2(5, 6), sm::vec2(7, 8)
 		};
-		std::shared_ptr<Shape> shape = std::make_shared<Polyline>(cnodes);
+		std::shared_ptr<Shape2D> shape = std::make_shared<Polyline2D>(cnodes);
 
 		auto json = js::RTTR::ToRapidJson(shape);
 //		printf("%s\n", json.c_str());
-		Polyline pline;
+		Polyline2D pline;
 		js::RTTR::FromRapidJson(json, "", pline);
 
 		auto& vs = pline.GetVertices();
@@ -250,11 +250,11 @@ TEST_CASE("json")
 		std::vector<sm::vec2> cnodes = {
 			sm::vec2(1, 2), sm::vec2(3, 4), sm::vec2(5, 6), sm::vec2(7, 8)
 		};
-		std::shared_ptr<Shape> shape = std::make_shared<Polygon>(cnodes);
+		std::shared_ptr<Shape2D> shape = std::make_shared<Polygon2D>(cnodes);
 
 		auto json = js::RTTR::ToRapidJson(shape);
 //		printf("%s\n", json.c_str());
-		Polygon pline;
+		Polygon2D pline;
 		js::RTTR::FromRapidJson(json, "", pline);
 
 		auto& vs = pline.GetVertices();

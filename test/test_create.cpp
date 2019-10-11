@@ -43,7 +43,7 @@ TEST_CASE("stack")
 
 	SECTION("polyline")
 	{
-		Polyline pline({ sm::vec2(1, 2), sm::vec2(3, 4), sm::vec2(5, 6), sm::vec2(7, 8) });
+		Polyline2D pline({ sm::vec2(1, 2), sm::vec2(3, 4), sm::vec2(5, 6), sm::vec2(7, 8) });
 		auto& vs = pline.GetVertices();
 		REQUIRE(vs[0] == sm::vec2(1, 2));
 		REQUIRE(vs[1] == sm::vec2(3, 4));
@@ -53,7 +53,7 @@ TEST_CASE("stack")
 
 	SECTION("polygon")
 	{
-		Polygon pgon({ sm::vec2(1, 2), sm::vec2(3, 4), sm::vec2(5, 6), sm::vec2(7, 8) });
+		Polygon2D pgon({ sm::vec2(1, 2), sm::vec2(3, 4), sm::vec2(5, 6), sm::vec2(7, 8) });
 		auto& vs = pgon.GetVertices();
 		REQUIRE(vs[0] == sm::vec2(1, 2));
 		REQUIRE(vs[1] == sm::vec2(3, 4));
