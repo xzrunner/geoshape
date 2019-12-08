@@ -5,7 +5,7 @@
 
 RTTR_REGISTRATION
 {
-	rttr::registration::class_<gs::Polygon2D>("gs_polygon")
+	rttr::registration::class_<gs::Polygon2D>("gs_polygon2d")
 		.constructor<>()
 		.constructor<const std::vector<sm::vec2>&>()
 		.property("vertices", &gs::Polygon2D::GetVertices, &gs::Polygon2D::SetVertices)
