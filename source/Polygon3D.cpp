@@ -1,5 +1,16 @@
 #include "geoshape/Polygon3D.h"
 
+RTTR_REGISTRATION
+{
+
+rttr::registration::class_<gs::Polygon3D>("gs_polygon3d")
+	.constructor<>()
+	.constructor<const std::vector<sm::vec3>&>()
+	.property("vertices", &gs::Polygon3D::GetVertices, &gs::Polygon3D::SetVertices)
+;
+
+}
+
 namespace gs
 {
 

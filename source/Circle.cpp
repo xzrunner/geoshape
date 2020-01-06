@@ -5,12 +5,14 @@
 
 RTTR_REGISTRATION
 {
-	rttr::registration::class_<gs::Circle>("gs_circle")
-		.constructor<>()
-		.constructor<const sm::vec2&, float>()
-		.property("center", &gs::Circle::GetCenter, &gs::Circle::SetCenter)
-		.property("radius", &gs::Circle::GetRadius, &gs::Circle::SetRadius)
-	;
+
+rttr::registration::class_<gs::Circle>("gs_circle")
+	.constructor<>()
+	.constructor<const sm::vec2&, float>()
+	.property("center", &gs::Circle::GetCenter, &gs::Circle::SetCenter)
+	.property("radius", &gs::Circle::GetRadius, &gs::Circle::SetRadius)
+;
+
 }
 
 namespace gs

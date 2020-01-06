@@ -1,5 +1,16 @@
 #include "geoshape/Point3D.h"
 
+RTTR_REGISTRATION
+{
+
+rttr::registration::class_<gs::Point3D>("gs_point3d")
+	.constructor<>()
+	.constructor<const sm::vec3&>()
+	.property("pos", &gs::Point3D::GetPos, &gs::Point3D::SetPos)
+;
+
+}
+
 namespace gs
 {
 

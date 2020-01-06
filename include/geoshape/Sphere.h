@@ -16,7 +16,10 @@ public:
     virtual std::unique_ptr<Shape3D> Clone() const override;
 
     auto& GetCenter() const { return m_center; }
+    void  SetCenter(const sm::vec3& center) { m_center = center; }
+
     float GetRadius() const { return m_radius; }
+    void  SetRadius(float radius) { m_radius = radius; }
 
 private:
     void BuildBounding();

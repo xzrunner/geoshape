@@ -1,5 +1,17 @@
 #include "geoshape/Polyline3D.h"
 
+RTTR_REGISTRATION
+{
+
+rttr::registration::class_<gs::Polyline3D>("gs_polyline3d")
+	.constructor<>()
+	.constructor<const std::vector<sm::vec3>&, bool>()
+	.property("vertices", &gs::Polyline3D::GetVertices, &gs::Polyline3D::SetVertices)
+    .property("closed", &gs::Polyline3D::GetClosed, &gs::Polyline3D::SetClosed)
+;
+
+}
+
 namespace gs
 {
 

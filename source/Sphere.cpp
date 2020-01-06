@@ -1,5 +1,17 @@
 #include "geoshape/Sphere.h"
 
+RTTR_REGISTRATION
+{
+
+rttr::registration::class_<gs::Sphere>("gs_Sphere")
+	.constructor<>()
+	.constructor<const sm::vec3&, float>()
+	.property("center", &gs::Sphere::GetCenter, &gs::Sphere::SetCenter)
+    .property("radius", &gs::Sphere::GetRadius, &gs::Sphere::SetRadius)
+;
+
+}
+
 namespace gs
 {
 

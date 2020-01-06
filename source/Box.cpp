@@ -1,5 +1,16 @@
 #include "geoshape/Box.h"
 
+RTTR_REGISTRATION
+{
+
+rttr::registration::class_<gs::Box>("gs_box")
+	.constructor<>()
+	.constructor<const sm::cube&>()
+	.property("cube", &gs::Box::GetCube, &gs::Box::SetCube)
+;
+
+}
+
 namespace gs
 {
 

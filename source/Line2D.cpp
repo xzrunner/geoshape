@@ -5,12 +5,14 @@
 
 RTTR_REGISTRATION
 {
-	rttr::registration::class_<gs::Line2D>("gs_line2d")
-		.constructor<>()
-		.constructor<const sm::vec2&, const sm::vec2&>()
-		.property("start", &gs::Line2D::GetStart, &gs::Line2D::SetStart)
-        .property("end", &gs::Line2D::GetEnd, &gs::Line2D::SetEnd)
-	;
+
+rttr::registration::class_<gs::Line2D>("gs_line2d")
+	.constructor<>()
+	.constructor<const sm::vec2&, const sm::vec2&>()
+	.property("start", &gs::Line2D::GetStart, &gs::Line2D::SetStart)
+    .property("end", &gs::Line2D::GetEnd, &gs::Line2D::SetEnd)
+;
+
 }
 
 namespace gs

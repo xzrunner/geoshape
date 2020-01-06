@@ -6,11 +6,13 @@
 
 RTTR_REGISTRATION
 {
-	rttr::registration::class_<gs::Rect>("gs_rect")
-		.constructor<>()
-		.constructor<const sm::rect&>()
-		.property("rect", &gs::Rect::GetRect, &gs::Rect::SetRect)
-	;
+
+rttr::registration::class_<gs::Rect>("gs_rect")
+	.constructor<>()
+	.constructor<const sm::rect&>()
+	.property("rect", &gs::Rect::GetRect, &gs::Rect::SetRect)
+;
+
 }
 
 namespace gs
