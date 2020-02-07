@@ -41,6 +41,9 @@
     <ClCompile Include="..\..\..\source\Line2D.cpp">
       <Filter>2d</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\source\Line3D.cpp">
+      <Filter>3d</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\include\geoshape\Shape2D.h" />
@@ -85,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\include\geoshape\Line2D.h">
       <Filter>2d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\geoshape\Line3D.h">
+      <Filter>3d</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
