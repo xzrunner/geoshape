@@ -2,7 +2,11 @@
 
 #include <SM_Rect.h>
 
+#ifndef RTTR_DISABLE
 #include <rttr/registration>
+#endif // RTTR_DISABLE
+
+#include <memory>
 
 namespace gs
 {
@@ -21,7 +25,9 @@ public:
 protected:
 	sm::rect m_bounding;
 
+#ifndef RTTR_DISABLE
     RTTR_ENABLE()
+#endif // RTTR_DISABLE
 
 }; // Shape2D
 

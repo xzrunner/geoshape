@@ -2,6 +2,8 @@
 
 #include "geoshape/Shape3D.h"
 
+#include <vector>
+
 namespace gs
 {
 
@@ -22,7 +24,9 @@ private:
 private:
     std::vector<sm::vec3> m_vertices;
 
+#ifndef RTTR_DISABLE
     RTTR_ENABLE(Shape3D)
+#endif // RTTR_DISABLE
 
 }; // Polygon3D
 

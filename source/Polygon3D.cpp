@@ -1,5 +1,6 @@
 #include "geoshape/Polygon3D.h"
 
+#ifndef RTTR_DISABLE
 RTTR_REGISTRATION
 {
 
@@ -10,6 +11,7 @@ rttr::registration::class_<gs::Polygon3D>("gs_polygon3d")
 ;
 
 }
+#endif // RTTR_DISABLE
 
 namespace gs
 {

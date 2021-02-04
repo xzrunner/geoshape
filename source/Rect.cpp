@@ -4,6 +4,7 @@
 #include <SM_Calc.h>
 #include <primitive/Path.h>
 
+#ifndef RTTR_DISABLE
 RTTR_REGISTRATION
 {
 
@@ -14,6 +15,7 @@ rttr::registration::class_<gs::Rect>("gs_rect")
 ;
 
 }
+#endif // RTTR_DISABLE
 
 namespace gs
 {

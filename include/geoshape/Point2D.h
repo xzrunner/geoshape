@@ -25,7 +25,9 @@ private:
 private:
 	sm::vec2 m_pos;
 
+#ifndef RTTR_DISABLE
 	RTTR_ENABLE(Shape2D)
+#endif // RTTR_DISABLE
 
 }; // Point2D
 

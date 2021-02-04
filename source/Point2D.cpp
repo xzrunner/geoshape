@@ -3,6 +3,7 @@
 
 #include <SM_Calc.h>
 
+#ifndef RTTR_DISABLE
 RTTR_REGISTRATION
 {
 
@@ -13,6 +14,7 @@ rttr::registration::class_<gs::Point2D>("gs_point2d")
 ;
 
 }
+#endif // RTTR_DISABLE
 
 namespace gs
 {

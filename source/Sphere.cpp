@@ -1,5 +1,6 @@
 #include "geoshape/Sphere.h"
 
+#ifndef RTTR_DISABLE
 RTTR_REGISTRATION
 {
 
@@ -11,6 +12,7 @@ rttr::registration::class_<gs::Sphere>("gs_Sphere")
 ;
 
 }
+#endif // RTTR_DISABLE
 
 namespace gs
 {

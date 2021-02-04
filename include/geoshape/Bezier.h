@@ -31,7 +31,9 @@ private:
 
 	prim::Bezier m_bezier;
 
+#ifndef RTTR_DISABLE
 	RTTR_ENABLE(Shape2D)
+#endif // RTTR_DISABLE
 
 }; // Bezier
 

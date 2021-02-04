@@ -3,8 +3,11 @@
 #include <SM_Vector.h>
 #include <SM_Rect.h>
 #include <SM_Cube.h>
+#ifndef RTTR_DISABLE
 #include <rttr/registration>
+#endif // RTTR_DISABLE
 
+#ifndef RTTR_DISABLE
 RTTR_REGISTRATION
 {
 
@@ -40,6 +43,7 @@ rttr::registration::class_<sm::cube>("sm::cube")
 ;
 
 }
+#endif // RTTR_DISABLE
 
 namespace gs
 {

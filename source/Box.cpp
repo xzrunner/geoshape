@@ -1,5 +1,6 @@
 #include "geoshape/Box.h"
 
+#ifndef RTTR_DISABLE
 RTTR_REGISTRATION
 {
 
@@ -10,6 +11,7 @@ rttr::registration::class_<gs::Box>("gs_box")
 ;
 
 }
+#endif // RTTR_DISABLE
 
 namespace gs
 {

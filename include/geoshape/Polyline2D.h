@@ -28,7 +28,9 @@ public:
 private:
 	Polyline2DImpl m_impl;
 
+#ifndef RTTR_DISABLE
 	RTTR_ENABLE(Shape2D)
+#endif // RTTR_DISABLE
 
 }; // Polyline2D
 

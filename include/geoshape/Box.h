@@ -16,7 +16,9 @@ public:
     const sm::cube& GetCube() const { return m_bounding; }
     void SetCube(const sm::cube& cube) { m_bounding = cube; }
 
+#ifndef RTTR_DISABLE
     RTTR_ENABLE(Shape3D)
+#endif // RTTR_DISABLE
 
 }; // Box
 

@@ -19,7 +19,9 @@ public:
 	const sm::rect& GetRect() const { return m_bounding; }
 	void SetRect(const sm::rect& r) { m_bounding = r; }
 
+#ifndef RTTR_DISABLE
 	RTTR_ENABLE(Shape2D)
+#endif // RTTR_DISABLE
 
 }; // Rect
 

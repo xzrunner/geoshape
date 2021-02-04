@@ -22,7 +22,9 @@ private:
 private:
     sm::vec3 m_pos;
 
+#ifndef RTTR_DISABLE
     RTTR_ENABLE(Shape3D)
+#endif // RTTR_DISABLE
 
 }; // Point3D
 
