@@ -1,6 +1,6 @@
 #include "geoshape/Polyline3D.h"
 
-#ifndef RTTR_DISABLE
+#ifndef NO_RTTR
 RTTR_REGISTRATION
 {
 
@@ -12,7 +12,7 @@ rttr::registration::class_<gs::Polyline3D>("gs_polyline3d")
 ;
 
 }
-#endif // RTTR_DISABLE
+#endif // NO_RTTR
 
 namespace gs
 {

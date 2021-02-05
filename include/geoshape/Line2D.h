@@ -27,9 +27,9 @@ private:
 private:
 	sm::vec2 m_start, m_end;
 
-#ifndef RTTR_DISABLE
+#ifndef NO_RTTR
 	RTTR_ENABLE(Shape2D)
-#endif // RTTR_DISABLE
+#endif // NO_RTTR
 
 }; // Line2D
 

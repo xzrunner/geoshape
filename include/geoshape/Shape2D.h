@@ -2,9 +2,9 @@
 
 #include <SM_Rect.h>
 
-#ifndef RTTR_DISABLE
+#ifndef NO_RTTR
 #include <rttr/registration>
-#endif // RTTR_DISABLE
+#endif // NO_RTTR
 
 #include <memory>
 
@@ -25,9 +25,9 @@ public:
 protected:
 	sm::rect m_bounding;
 
-#ifndef RTTR_DISABLE
+#ifndef NO_RTTR
     RTTR_ENABLE()
-#endif // RTTR_DISABLE
+#endif // NO_RTTR
 
 }; // Shape2D
 

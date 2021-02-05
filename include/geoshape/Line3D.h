@@ -24,9 +24,9 @@ private:
 private:
 	sm::vec3 m_start, m_end;
 
-#ifndef RTTR_DISABLE
+#ifndef NO_RTTR
 	RTTR_ENABLE(Shape3D)
-#endif // RTTR_DISABLE
+#endif // NO_RTTR
 
 }; // Line3D
 

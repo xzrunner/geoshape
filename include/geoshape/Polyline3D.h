@@ -29,9 +29,9 @@ private:
     std::vector<sm::vec3> m_vertices;
     bool m_is_closed = false;
 
-#ifndef RTTR_DISABLE
+#ifndef NO_RTTR
     RTTR_ENABLE(Shape3D)
-#endif // RTTR_DISABLE
+#endif // NO_RTTR
 
 }; // Polyline3D
 

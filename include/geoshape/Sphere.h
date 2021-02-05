@@ -28,9 +28,9 @@ private:
     sm::vec3 m_center;
     float    m_radius = 1;
 
-#ifndef RTTR_DISABLE
+#ifndef NO_RTTR
     RTTR_ENABLE(Shape3D)
-#endif // RTTR_DISABLE
+#endif // NO_RTTR
 
 }; // Sphere
 

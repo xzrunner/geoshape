@@ -3,7 +3,7 @@
 
 #include <SM_Calc.h>
 
-#ifndef RTTR_DISABLE
+#ifndef NO_RTTR
 RTTR_REGISTRATION
 {
 
@@ -14,7 +14,7 @@ rttr::registration::class_<gs::Polyline2D>("gs_polyline2d")
 ;
 
 }
-#endif // RTTR_DISABLE
+#endif // NO_RTTR
 
 namespace gs
 {

@@ -1,6 +1,6 @@
 #include "geoshape/Point3D.h"
 
-#ifndef RTTR_DISABLE
+#ifndef NO_RTTR
 RTTR_REGISTRATION
 {
 
@@ -11,7 +11,7 @@ rttr::registration::class_<gs::Point3D>("gs_point3d")
 ;
 
 }
-#endif // RTTR_DISABLE
+#endif // NO_RTTR
 
 namespace gs
 {

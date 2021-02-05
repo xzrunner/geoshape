@@ -3,7 +3,7 @@
 
 #include <SM_Calc.h>
 
-#ifndef RTTR_DISABLE
+#ifndef NO_RTTR
 RTTR_REGISTRATION
 {
 
@@ -15,7 +15,7 @@ rttr::registration::class_<gs::Line2D>("gs_line2d")
 ;
 
 }
-#endif // RTTR_DISABLE
+#endif // NO_RTTR
 
 namespace gs
 {
