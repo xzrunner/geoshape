@@ -135,13 +135,13 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <PreprocessorDefinitions>NO_RTTR</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;NO_RTTR</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\..\include;..\..\..\..\sm;..\..\..\..\primitive\include</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NO_RTTR</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;NO_RTTR</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
