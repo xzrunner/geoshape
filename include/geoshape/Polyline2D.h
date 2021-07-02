@@ -14,6 +14,8 @@ public:
 	Polyline2D() {}
 	Polyline2D(const std::vector<sm::vec2>& vertices);
 
+	virtual ShapeType2D GetType() const override { return ShapeType2D::Polyline; }
+
 	virtual std::unique_ptr<Shape2D> Clone() const override;
 
 	virtual bool IsContain(const sm::vec2& pos) const override;

@@ -11,6 +11,8 @@ public:
 	Line2D() {}
 	Line2D(const sm::vec2& start, const sm::vec2& end);
 
+	virtual ShapeType2D GetType() const override { return ShapeType2D::Line; }
+
 	virtual std::unique_ptr<Shape2D> Clone() const override;
 
 	virtual bool IsContain(const sm::vec2& pos) const override;

@@ -55,6 +55,7 @@
     <ClInclude Include="..\..\..\include\geoshape\Rect.h">
       <Filter>2d</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\include\geoshape\typedef.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\source\Serialize.cpp" />

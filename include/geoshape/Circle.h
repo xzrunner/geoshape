@@ -11,6 +11,8 @@ public:
 	Circle() {}
 	Circle(const sm::vec2& center, float radius);
 
+	virtual ShapeType2D GetType() const override { return ShapeType2D::Circle; }
+
 	virtual std::unique_ptr<Shape2D> Clone() const override;
 
 	virtual bool IsContain(const sm::vec2& pos) const override;

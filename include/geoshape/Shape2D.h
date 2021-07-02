@@ -1,5 +1,7 @@
 #pragma once
 
+#include "geoshape/typedef.h"
+
 #include <SM_Rect.h>
 
 #ifndef NO_RTTR
@@ -16,6 +18,8 @@ class Shape2D
 public:
 	Shape2D() {}
     virtual ~Shape2D() {}
+
+	virtual ShapeType2D GetType() const = 0;
 
     virtual std::unique_ptr<Shape2D> Clone() const = 0;
 

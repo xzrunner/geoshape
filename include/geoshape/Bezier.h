@@ -16,6 +16,8 @@ public:
 	Bezier() {}
 	Bezier(const std::array<sm::vec2, prim::Bezier::CTRL_NODE_COUNT>& ctrl_nodes);
 
+	virtual ShapeType2D GetType() const override { return ShapeType2D::Bezier; }
+
 	virtual std::unique_ptr<Shape2D> Clone() const override;
 
 	virtual bool IsContain(const sm::vec2& pos) const override;

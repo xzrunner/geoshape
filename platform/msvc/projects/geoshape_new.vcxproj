@@ -36,6 +36,7 @@
     <ClInclude Include="..\..\..\include\geoshape\Serialize.h" />
     <ClInclude Include="..\..\..\include\geoshape\Shape2D.h" />
     <ClInclude Include="..\..\..\include\geoshape\Shape3D.h" />
+    <ClInclude Include="..\..\..\include\geoshape\typedef.h" />
     <ClInclude Include="..\..\..\include\geoshape\Sphere.h" />
   </ItemGroup>
   <ItemGroup>
