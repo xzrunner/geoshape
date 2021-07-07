@@ -40,4 +40,12 @@ bool Rect::IsIntersect(const sm::rect& rect) const
 	return sm::is_rect_intersect_rect(rect, m_bounding);
 }
 
+void Rect::Translate(float dx, float dy)
+{
+	m_bounding.xmin += dx;
+	m_bounding.xmax += dx;
+	m_bounding.ymin += dy;
+	m_bounding.ymax += dy;
+}
+
 }

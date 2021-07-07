@@ -40,6 +40,11 @@ bool Polygon2D::IsIntersect(const sm::rect& rect) const
 	return m_impl.IsIntersect(rect);
 }
 
+void Polygon2D::Translate(float dx, float dy)
+{
+	m_impl.Translate(sm::vec2(dx, dy));
+}
+
 void Polygon2D::SetVertices(const std::vector<sm::vec2>& vertices)
 {
 	m_impl.SetVertices(vertices);

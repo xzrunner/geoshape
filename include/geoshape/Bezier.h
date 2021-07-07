@@ -23,6 +23,8 @@ public:
 	virtual bool IsContain(const sm::vec2& pos) const override;
 	virtual bool IsIntersect(const sm::rect& rect) const override;
 
+	virtual void Translate(float dx, float dy) override;
+
 	void SetCtrlPos(const std::array<sm::vec2, prim::Bezier::CTRL_NODE_COUNT>& ctrl_nodes);
 	auto& GetCtrlPos() const { return m_bezier.GetCtrlNodes(); }
 

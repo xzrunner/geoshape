@@ -144,6 +144,14 @@ bool Polyline2DImpl::ChangeVertex(const sm::vec2& from, const sm::vec2& to)
 	return true;
 }
 
+void Polyline2DImpl::Translate(const sm::vec2& offset)
+{
+	for (auto& vert : m_vertices) {
+		vert += offset;
+	}
+	UpdateBounding();
+}
+
 void Polyline2DImpl::UpdateBounding()
 {
 	m_bounding.MakeEmpty();

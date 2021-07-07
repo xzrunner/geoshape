@@ -32,6 +32,8 @@ public:
     void SetClosed(bool is_closed) { m_is_closed = is_closed; }
     bool GetClosed() const { return m_is_closed; }
 
+	void Translate(const sm::vec2& offset);
+
 private:
 	void UpdateBounding();
 

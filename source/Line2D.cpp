@@ -43,6 +43,14 @@ bool Line2D::IsIntersect(const sm::rect& rect) const
 	return sm::is_rect_intersect_segment(rect, m_start, m_end);
 }
 
+void Line2D::Translate(float dx, float dy)
+{
+	auto offset = sm::vec2(dx, dy);
+	m_start += offset;
+	m_end += offset;
+	UpdateBounding();
+}
+
 void Line2D::SetStart(const sm::vec2& start)
 {
 	m_start = start;

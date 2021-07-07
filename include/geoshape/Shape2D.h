@@ -26,6 +26,8 @@ public:
 	virtual bool IsContain(const sm::vec2& pos) const = 0;
 	virtual bool IsIntersect(const sm::rect& rect) const = 0;
 
+	virtual void Translate(float dx, float dy) = 0;
+
 protected:
 	sm::rect m_bounding;
 

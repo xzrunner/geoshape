@@ -40,6 +40,11 @@ bool Polyline2D::IsIntersect(const sm::rect& rect) const
 	return m_impl.IsIntersect(rect);
 }
 
+void Polyline2D::Translate(float dx, float dy)
+{
+	m_impl.Translate(sm::vec2(dx, dy));
+}
+
 void Polyline2D::SetVertices(const std::vector<sm::vec2>& vertices)
 {
 	m_impl.SetVertices(vertices);

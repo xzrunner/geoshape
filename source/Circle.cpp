@@ -66,6 +66,11 @@ bool Circle::IsIntersect(const sm::rect& rect) const
 	return false;
 }
 
+void Circle::Translate(float dx, float dy)
+{
+	SetCenter(m_center + sm::vec2(dx, dy));
+}
+
 void Circle::SetCenter(const sm::vec2& center)
 {
 	m_center = center;

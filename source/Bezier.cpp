@@ -47,6 +47,16 @@ bool Bezier::IsIntersect(const sm::rect& rect) const
 	return m_impl.IsIntersect(rect);
 }
 
+void Bezier::Translate(float dx, float dy)
+{
+	auto ctrl_nodes = GetCtrlPos();
+	for (auto& pos : ctrl_nodes) {
+		pos.x += dx;
+		pos.y += dy;
+	}
+	SetCtrlPos(ctrl_nodes);
+}
+
 void Bezier::SetCtrlPos(const std::array<sm::vec2, prim::Bezier::CTRL_NODE_COUNT>& ctrl_nodes)
 {
 	m_bezier.SetCtrlNodes(ctrl_nodes);

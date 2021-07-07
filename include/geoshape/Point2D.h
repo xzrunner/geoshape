@@ -18,6 +18,8 @@ public:
 	virtual bool IsContain(const sm::vec2& pos) const override;
 	virtual bool IsIntersect(const sm::rect& rect) const override;
 
+	virtual void Translate(float dx, float dy) override;
+
 	auto& GetPos() const { return m_pos; }
 	void SetPos(const sm::vec2& pos);
 

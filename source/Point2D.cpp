@@ -40,6 +40,11 @@ bool Point2D::IsIntersect(const sm::rect& rect) const
 	return sm::is_rect_intersect_rect(rect, m_bounding);
 }
 
+void Point2D::Translate(float dx, float dy)
+{
+	SetPos(m_pos + sm::vec2(dx, dy));
+}
+
 void Point2D::SetPos(const sm::vec2& pos)
 {
 	m_pos = pos;
