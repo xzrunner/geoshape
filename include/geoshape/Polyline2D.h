@@ -29,6 +29,8 @@ public:
     void SetClosed(bool is_closed) { m_impl.SetClosed(is_closed); }
     bool GetClosed() const { return m_impl.GetClosed(); }
 
+	std::vector<sm::vec2> Resample(const float length) const;
+
 private:
 	Polyline2DImpl m_impl;
 

@@ -51,4 +51,46 @@ void Polyline2D::SetVertices(const std::vector<sm::vec2>& vertices)
 	m_bounding = m_impl.GetBounding();
 }
 
+std::vector<sm::vec2> Polyline2D::Resample(const float length) const
+{
+	std::vector<sm::vec2> pts;
+	if (length == 0) {
+		return pts;
+	}
+
+	auto& vertices = m_impl.GetVertices();
+	if (vertices.size() < 2) {
+		return pts;
+	}
+
+	pts.push_back(vertices[0]);
+
+	int curr_idx = 0;
+	float curr_len = length;
+	float curr_seg = 0.0f;
+	while (curr_idx < vertices.size() - 1)
+	{
+		float seg_d = sm::dis_pos_to_pos(vertices[curr_idx], vertices[curr_idx + 1]);
+		float seg_left = seg_d * (1.0f - curr_seg);
+		if (seg_left > curr_len)
+		{
+			curr_seg += curr_len / seg_d;
+
+			auto dir = (vertices[curr_idx + 1] - vertices[curr_idx]) / seg_d;
+			pts.push_back(vertices[curr_idx] + dir * curr_seg * seg_d);
+
+			curr_len = length;
+		}
+		else
+		{
+			curr_len -= seg_left;
+			curr_seg = 0.0f;
+
+			++curr_idx;
+		}
+	}
+
+	return pts;
+}
+
 }
