@@ -36,6 +36,7 @@
     <ClInclude Include="..\..\..\include\geoshape\Serialize.h" />
     <ClInclude Include="..\..\..\include\geoshape\Shape2D.h" />
     <ClInclude Include="..\..\..\include\geoshape\Shape3D.h" />
+    <ClInclude Include="..\..\..\include\geoshape\Triangles.h" />
     <ClInclude Include="..\..\..\include\geoshape\typedef.h" />
     <ClInclude Include="..\..\..\include\geoshape\Sphere.h" />
   </ItemGroup>
@@ -55,6 +56,7 @@
     <ClCompile Include="..\..\..\source\Rect.cpp" />
     <ClCompile Include="..\..\..\source\Serialize.cpp" />
     <ClCompile Include="..\..\..\source\Sphere.cpp" />
+    <ClCompile Include="..\..\..\source\Triangles.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectName>geoshape</ProjectName>
