@@ -26,8 +26,15 @@ public:
 	auto& GetVertices() const { return m_impl.GetVertices(); }
 	void SetVertices(const std::vector<sm::vec2>& vertices);
 
+	const std::vector<sm::vec2>& GetTris() const;
+
+private:
+	void BuildTriangles() const;
+
 private:
 	Polyline2DImpl m_impl;
+
+	mutable std::vector<sm::vec2> m_tris;
 
 #ifndef NO_RTTR
 	RTTR_ENABLE(Shape2D)

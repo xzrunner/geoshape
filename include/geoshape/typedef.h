@@ -12,7 +12,6 @@ enum class ShapeType2D
 	Polyline,
 	Polygon,
 	Bezier,
-	Triangles,
 };
 
 }

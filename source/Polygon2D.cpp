@@ -2,6 +2,7 @@
 #include "geoshape/config.h"
 
 #include <SM_Calc.h>
+#include <SM_Triangulation.h>
 
 #ifndef NO_RTTR
 RTTR_REGISTRATION
@@ -43,12 +44,31 @@ bool Polygon2D::IsIntersect(const sm::rect& rect) const
 void Polygon2D::Translate(float dx, float dy)
 {
 	m_impl.Translate(sm::vec2(dx, dy));
+
+	m_tris.clear();
 }
 
 void Polygon2D::SetVertices(const std::vector<sm::vec2>& vertices)
 {
 	m_impl.SetVertices(vertices);
 	m_bounding = m_impl.GetBounding();
+
+	m_tris.clear();
+}
+
+const std::vector<sm::vec2>& Polygon2D::GetTris() const 
+{ 
+	if (m_tris.empty()) {
+		BuildTriangles();
+	}
+	return m_tris; 
+}
+
+void Polygon2D::BuildTriangles() const
+{
+	m_tris.clear();
+	std::vector<std::vector<sm::vec2>> holes;
+	sm::triangulate_holes(m_impl.GetVertices(), holes, m_tris);
 }
 
 }

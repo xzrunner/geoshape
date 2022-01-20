@@ -56,9 +56,6 @@
       <Filter>2d</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\geoshape\typedef.h" />
-    <ClInclude Include="..\..\..\include\geoshape\Triangles.h">
-      <Filter>2d</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\source\Serialize.cpp" />
@@ -102,9 +99,6 @@
       <Filter>3d</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\source\Rect.cpp">
-      <Filter>2d</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\source\Triangles.cpp">
       <Filter>2d</Filter>
     </ClCompile>
   </ItemGroup>
