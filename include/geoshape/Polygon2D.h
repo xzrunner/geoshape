@@ -12,7 +12,8 @@ class Polygon2D : public Shape2D
 {
 public:
 	Polygon2D() {}
-	Polygon2D(const std::vector<sm::vec2>& vertices);
+	Polygon2D(const std::vector<sm::vec2>& border);
+	Polygon2D(const std::vector<sm::vec2>& border, const std::vector<std::vector<sm::vec2>>& holes);
 
 	virtual ShapeType2D GetType() const override { return ShapeType2D::Polygon; }
 
@@ -23,8 +24,10 @@ public:
 
 	virtual void Translate(float dx, float dy) override;
 
-	auto& GetVertices() const { return m_impl.GetVertices(); }
+	auto& GetVertices() const { return m_border.GetVertices(); }
 	void SetVertices(const std::vector<sm::vec2>& vertices);
+
+	void AddHole(const std::vector<sm::vec2>& hole);
 
 	const std::vector<sm::vec2>& GetTris() const;
 
@@ -32,7 +35,8 @@ private:
 	void BuildTriangles() const;
 
 private:
-	Polyline2DImpl m_impl;
+	Polyline2DImpl m_border;
+	std::vector<std::vector<sm::vec2>> m_holes;
 
 	mutable std::vector<sm::vec2> m_tris;
 

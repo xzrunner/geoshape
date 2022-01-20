@@ -20,38 +20,70 @@ rttr::registration::class_<gs::Polygon2D>("gs_polygon2d")
 namespace gs
 {
 
-Polygon2D::Polygon2D(const std::vector<sm::vec2>& vertices)
-	: m_impl(vertices, true)
+Polygon2D::Polygon2D(const std::vector<sm::vec2>& border)
+	: m_border(border, true)
 {
-	m_bounding = m_impl.GetBounding();
+	m_bounding = m_border.GetBounding();
+}
+
+Polygon2D::Polygon2D(const std::vector<sm::vec2>& border, const std::vector<std::vector<sm::vec2>>& holes)
+	: m_border(border, true)
+	, m_holes(holes)
+{
+	m_bounding = m_border.GetBounding();
 }
 
 std::unique_ptr<Shape2D> Polygon2D::Clone() const
 {
-	return std::make_unique<Polygon2D>(m_impl.GetVertices());
+	return std::make_unique<Polygon2D>(m_border.GetVertices(), m_holes);
 }
 
 bool Polygon2D::IsContain(const sm::vec2& pos) const
 {
-	return sm::is_point_in_area(pos, m_impl.GetVertices());
+	if (!sm::is_point_in_area(pos, m_border.GetVertices())) {
+		return false;
+	}
+
+	for (auto& hold : m_holes) {
+		if (sm::is_point_in_area(pos, hold)) {
+			return false;
+		}
+	}
+
+	return true;
 }
 
 bool Polygon2D::IsIntersect(const sm::rect& rect) const
 {
-	return m_impl.IsIntersect(rect);
+	return m_border.IsIntersect(rect);
 }
 
 void Polygon2D::Translate(float dx, float dy)
 {
-	m_impl.Translate(sm::vec2(dx, dy));
+	sm::vec2 d(dx, dy);
+
+	m_border.Translate(d);
+
+	for (auto& hole : m_holes) {
+		for (auto& p : hole) {
+			p += d;
+		}
+	}
 
 	m_tris.clear();
 }
 
 void Polygon2D::SetVertices(const std::vector<sm::vec2>& vertices)
 {
-	m_impl.SetVertices(vertices);
-	m_bounding = m_impl.GetBounding();
+	m_border.SetVertices(vertices);
+	m_bounding = m_border.GetBounding();
+
+	m_tris.clear();
+}
+
+void Polygon2D::AddHole(const std::vector<sm::vec2>& hole)
+{
+	m_holes.push_back(hole);
 
 	m_tris.clear();
 }
@@ -67,8 +99,8 @@ const std::vector<sm::vec2>& Polygon2D::GetTris() const
 void Polygon2D::BuildTriangles() const
 {
 	m_tris.clear();
-	std::vector<std::vector<sm::vec2>> holes;
-	sm::triangulate_holes(m_impl.GetVertices(), holes, m_tris);
+
+	sm::triangulate_holes(m_border.GetVertices(), m_holes, m_tris);
 }
 
 }
