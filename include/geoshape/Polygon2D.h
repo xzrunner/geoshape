@@ -28,6 +28,7 @@ public:
 	void SetVertices(const std::vector<sm::vec2>& vertices);
 
 	void AddHole(const std::vector<sm::vec2>& hole);
+	auto& GetHoles() const { return m_holes; }
 
 	const std::vector<sm::vec2>& GetTris() const;
 
