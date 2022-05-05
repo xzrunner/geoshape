@@ -56,6 +56,12 @@
       <Filter>2d</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\geoshape\typedef.h" />
+    <ClInclude Include="..\..\..\include\geoshape\Arc.h">
+      <Filter>2d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\geoshape\Ellipse.h">
+      <Filter>2d</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\source\Serialize.cpp" />
@@ -99,6 +105,12 @@
       <Filter>3d</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\source\Rect.cpp">
+      <Filter>2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\Arc.cpp">
+      <Filter>2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\Ellipse.cpp">
       <Filter>2d</Filter>
     </ClCompile>
   </ItemGroup>

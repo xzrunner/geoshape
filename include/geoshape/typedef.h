@@ -9,6 +9,8 @@ enum class ShapeType2D
 	Line,
 	Rect,
 	Circle,
+	Arc,
+	Ellipse,
 	Polyline,
 	Polygon,
 	Bezier,

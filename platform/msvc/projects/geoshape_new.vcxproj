@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\include\geoshape\Arc.h" />
     <ClInclude Include="..\..\..\include\geoshape\Bezier.h" />
     <ClInclude Include="..\..\..\include\geoshape\Box.h" />
     <ClInclude Include="..\..\..\include\geoshape\Circle.h" />
     <ClInclude Include="..\..\..\include\geoshape\config.h" />
+    <ClInclude Include="..\..\..\include\geoshape\Ellipse.h" />
     <ClInclude Include="..\..\..\include\geoshape\Line2D.h" />
     <ClInclude Include="..\..\..\include\geoshape\Line3D.h" />
     <ClInclude Include="..\..\..\include\geoshape\Point2D.h" />
@@ -40,9 +42,11 @@
     <ClInclude Include="..\..\..\include\geoshape\Sphere.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\source\Arc.cpp" />
     <ClCompile Include="..\..\..\source\Bezier.cpp" />
     <ClCompile Include="..\..\..\source\Box.cpp" />
     <ClCompile Include="..\..\..\source\Circle.cpp" />
+    <ClCompile Include="..\..\..\source\Ellipse.cpp" />
     <ClCompile Include="..\..\..\source\Line2D.cpp" />
     <ClCompile Include="..\..\..\source\Line3D.cpp" />
     <ClCompile Include="..\..\..\source\Point2D.cpp" />
