@@ -12,7 +12,7 @@ class Polyline2D : public Shape2D
 {
 public:
 	Polyline2D() {}
-	Polyline2D(const std::vector<sm::vec2>& vertices);
+	Polyline2D(const std::vector<sm::vec2>& vertices, bool closed);
 
 	virtual ShapeType2D GetType() const override { return ShapeType2D::Polyline; }
 

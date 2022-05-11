@@ -19,15 +19,15 @@ rttr::registration::class_<gs::Polyline2D>("gs_polyline2d")
 namespace gs
 {
 
-Polyline2D::Polyline2D(const std::vector<sm::vec2>& vertices)
-	: m_impl(vertices, false)
+Polyline2D::Polyline2D(const std::vector<sm::vec2>& vertices, bool closed)
+	: m_impl(vertices, closed)
 {
 	m_bounding = m_impl.GetBounding();
 }
 
 std::unique_ptr<Shape2D> Polyline2D::Clone() const
 {
-	return std::make_unique<Polyline2D>(m_impl.GetVertices());
+	return std::make_unique<Polyline2D>(m_impl.GetVertices(), m_impl.GetClosed());
 }
 
 bool Polyline2D::IsContain(const sm::vec2& pos) const
