@@ -88,6 +88,13 @@ void Polygon2D::AddHole(const std::vector<sm::vec2>& hole)
 	m_tris.clear();
 }
 
+void Polygon2D::SetHoles(const std::vector<std::vector<sm::vec2>>& holes) 
+{ 
+	m_holes = holes;
+
+	m_tris.clear();
+}
+
 const std::vector<sm::vec2>& Polygon2D::GetTris() const 
 { 
 	if (m_tris.empty()) {

@@ -29,6 +29,7 @@ public:
 
 	void AddHole(const std::vector<sm::vec2>& hole);
 	auto& GetHoles() const { return m_holes; }
+	void SetHoles(const std::vector<std::vector<sm::vec2>>& holes);
 
 	const std::vector<sm::vec2>& GetTris() const;
 
