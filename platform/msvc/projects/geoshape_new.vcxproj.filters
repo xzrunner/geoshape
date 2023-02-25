@@ -62,6 +62,9 @@
     <ClInclude Include="..\..\..\include\geoshape\Ellipse.h">
       <Filter>2d</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\include\geoshape\Arc3D.h">
+      <Filter>3d</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\source\Serialize.cpp" />
@@ -112,6 +115,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\source\Ellipse.cpp">
       <Filter>2d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\Arc3D.cpp">
+      <Filter>3d</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

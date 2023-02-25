@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\include\geoshape\Arc.h" />
+    <ClInclude Include="..\..\..\include\geoshape\Arc3D.h" />
     <ClInclude Include="..\..\..\include\geoshape\Bezier.h" />
     <ClInclude Include="..\..\..\include\geoshape\Box.h" />
     <ClInclude Include="..\..\..\include\geoshape\Circle.h" />
@@ -43,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\source\Arc.cpp" />
+    <ClCompile Include="..\..\..\source\Arc3D.cpp" />
     <ClCompile Include="..\..\..\source\Bezier.cpp" />
     <ClCompile Include="..\..\..\source\Box.cpp" />
     <ClCompile Include="..\..\..\source\Circle.cpp" />
