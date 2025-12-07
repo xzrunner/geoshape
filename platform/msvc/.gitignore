@@ -1,7 +1,0 @@
-geoshape/
-gs_test/
-projects/*
-
-!*.vcxproj
-!*.vcxproj.filters
-!*.vcxproj.user
