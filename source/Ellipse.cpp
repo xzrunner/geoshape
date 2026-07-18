@@ -8,10 +8,11 @@
 namespace gs
 {
 
-Ellipse::Ellipse(const sm::vec2& center, float rx, float ry)
+Ellipse::Ellipse(const sm::vec2& center, float rx, float ry, float rotation)
 	: m_center(center)
 	, m_radius_x(rx)
 	, m_radius_y(ry)
+	, m_rotation(rotation)
 {
 	m_impl.SetClosed(true);
 	Reset();
@@ -19,13 +20,19 @@ Ellipse::Ellipse(const sm::vec2& center, float rx, float ry)
 
 std::unique_ptr<Shape2D> Ellipse::Clone() const
 {
-	return std::make_unique<Ellipse>(m_center, m_radius_x, m_radius_y);
+	return std::make_unique<Ellipse>(m_center, m_radius_x, m_radius_y, m_rotation);
 }
 
 bool Ellipse::IsContain(const sm::vec2& pos) const
 {
-	const float dx = pos.x - m_center.x;
-	const float dy = pos.y - m_center.y;
+	// Bring pos into the ellipse's local (un-rotated) frame first, then apply
+	// the axis-aligned containment test.
+	const float c = std::cosf(-m_rotation);
+	const float s = std::sinf(-m_rotation);
+	const float ox = pos.x - m_center.x;
+	const float oy = pos.y - m_center.y;
+	const float dx = ox * c - oy * s;
+	const float dy = ox * s + oy * c;
 	return (dx * dx) / (m_radius_x * m_radius_x) + (dy * dy) / (m_radius_y * m_radius_y) < 1;
 }
 
@@ -67,11 +74,25 @@ void Ellipse::SetRadius(float radius_x, float radius_y)
 	Reset();
 }
 
+void Ellipse::SetRotation(float rotation)
+{
+	if (m_rotation == rotation) {
+		return;
+	}
+
+	m_rotation = rotation;
+	Reset();
+}
+
 std::vector<sm::vec2> Ellipse::TransToPolyline() const
 {
 	const int MAX_NUM = 32;
 
 	const float d_angle = SM_TWO_PI / MAX_NUM;
+
+	// Rotate each axis-aligned sample by m_rotation about the centre.
+	const float cr = std::cosf(m_rotation);
+	const float sr = std::sinf(m_rotation);
 
 	std::vector<sm::vec2> polyline;
 	polyline.reserve(MAX_NUM);
@@ -79,8 +100,10 @@ std::vector<sm::vec2> Ellipse::TransToPolyline() const
 	for (int i = 0; i < MAX_NUM; ++i)
 	{
 		float a = i * d_angle;
-		const float x = m_center.x + m_radius_x * std::cosf(a);
-		const float y = m_center.y + m_radius_y * std::sinf(a);
+		const float ex = m_radius_x * std::cosf(a);
+		const float ey = m_radius_y * std::sinf(a);
+		const float x = m_center.x + ex * cr - ey * sr;
+		const float y = m_center.y + ex * sr + ey * cr;
 		polyline.push_back(sm::vec2(x, y));
 	}
 

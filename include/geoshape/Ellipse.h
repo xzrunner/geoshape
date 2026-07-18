@@ -12,7 +12,9 @@ class Ellipse : public Shape2D
 {
 public:
 	Ellipse() {}
-	Ellipse(const sm::vec2& center, float rx, float ry);
+	// rotation: CCW angle (radians) of the local x (radius_x) axis from the
+	// sketch X axis, about the ellipse centre. 0 = axis-aligned.
+	Ellipse(const sm::vec2& center, float rx, float ry, float rotation = 0);
 
 	virtual ShapeType2D GetType() const override { return ShapeType2D::Ellipse; }
 
@@ -29,6 +31,9 @@ public:
 	void GetRadius(float& radius_x, float& radius_y) const;
 	void SetRadius(float radius_x, float radius_y);
 
+	float GetRotation() const { return m_rotation; }
+	void  SetRotation(float rotation);
+
 	auto& GetVertices() const { return m_impl.GetVertices(); }
 
 private:
@@ -40,6 +45,7 @@ private:
 	sm::vec2 m_center;
 	float    m_radius_x = 1;
 	float    m_radius_y = 2;
+	float    m_rotation = 0;   // radians, CCW, about m_center (see ctor)
 
 	Polyline2DImpl m_impl;
 
